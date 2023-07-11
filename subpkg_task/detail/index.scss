@@ -72,13 +72,13 @@
 }
 
 .basic-info {
-
   .hr {
     margin: 20rpx 0;
     border-bottom: 1rpx solid #f4f4f4;
   }
 
   .timeline {
+    min-height: 110rpx;
     position: relative;
     padding: 0 140rpx 0 30rpx;
     margin-left: 30rpx;
