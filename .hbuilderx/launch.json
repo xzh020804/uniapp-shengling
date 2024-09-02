@@ -16,11 +16,16 @@
             "mp-weixin" : {
                 "launchtype" : "local"
             },
+            "provider" : "aliyun",
             "type" : "uniCloud"
         },
         {
             "playground" : "standard",
             "type" : "uni-app:app-android"
+        },
+        {
+            "openVueDevtools" : false,
+            "type" : "uni-app:h5"
         }
     ]
 }

@@ -10,5 +10,10 @@
     "miniprogram"
   ],
   "author": "lotjol <botue@sina.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "pinia": "^2.2.2",
+    "pinia-plugin-persistedstate": "4.0.0-alpha.4",
+    "uni-app-fetch": "^0.0.3"
+  }
 }

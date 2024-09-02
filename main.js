@@ -1,23 +1,28 @@
 import App from './App'
 
-// #ifndef VUE3
-import Vue from 'vue'
-import './uni.promisify.adaptor'
-Vue.config.productionTip = false
+import './utils/utils'
 
-App.mpType = 'app'
-const app = new Vue({
-  ...App,
-})
-app.$mount()
-// #endif
+import { createPinia } from 'pinia'
+import { createPersistedState } from 'pinia-plugin-persistedstate'
 
-// #ifdef VUE3
 import { createSSRApp } from 'vue'
 export function createApp() {
-  const app = createSSRApp(App)
-  return {
-    app,
-  }
+	const app = createSSRApp(App)
+	const pinia = createPinia()
+	pinia.use(
+		createPersistedState({
+			Storage: {
+				setItem(key, value) {
+					uni.setStorageSync((key, value))
+				},
+				getItem(key) {
+					return uni.getStorageSync(key)
+				},
+			},
+		})
+	)
+	app.use(pinia)
+	return {
+		app,
+	}
 }
-// #endif
